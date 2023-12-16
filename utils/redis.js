@@ -29,7 +29,7 @@ class RedisClient {
     await asyncSet(key, JSON.stringify(value), 'EX', duration);
   }
 
-  catch(error) {
+  async handleError(error) {
     console.log(`Error getting value from redis: ${error}`);
   }
 
