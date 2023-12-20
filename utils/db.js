@@ -30,13 +30,13 @@ class DBClient {
   }
 
   async nbUsers() {
-    const count = await this.client.db().collection('users').countDocuments();
-    return count;
+    const userCollection = await this.client.db(this.database).collection('users').countDocuments();
+    return userCollection;
   }
 
   async nbFiles() {
-    const count = await this.client.db().collection('files').countDocuments();
-    return count;
+    const filesCollection = await this.client.db(this.database).collection('files').countDocuments();
+    return filesCollection;
   }
 }
 
